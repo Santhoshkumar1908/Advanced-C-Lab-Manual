@@ -12,12 +12,33 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
+```
+#include<stdio.h>
+int max(int a,int b,int c,int d)
+{
+    if(a>b && a>c && a>d)
+    return a;
+    else if(b>a && b>c && b>d)
+    return b;
+    else if(c>a && c>b && c>d)
+    return c;
+    else 
+    return d;
+}
+int main()
+{
+    int a,b,c,d;
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    printf("%d",max(a,b,c,d));
+}
+```
 
 Output:
-//paste your output here
+
+<img width="327" height="300" alt="image" src="https://github.com/user-attachments/assets/b5c0442c-b131-44b7-a387-c1a4017a8d7d" />
 
 Result:
+
 Thus, the program  that create a function to find the greatest number is verified successfully.
 
 
@@ -36,12 +57,38 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
+```
+#include <stdio.h>
+void calculate_the_maximum(int n,int k){
+    int a=0,o=0,x=0;
+    for(int i=1; i<=n; i++){
+        for(int j=i+1; j<=n; j++){
+            if((i&j)>a && (i&j)<k){
+                a=i&j;
+            }
+            if((i|j)>o && (i|j)<k){
+                o=i|j;
+            }
+            if((i^j)>x && (i^j)<k){
+                x=i^j;
+            }
+        }
+    }
+    printf("%d\n%d\n%d\n",a,o,x);
+}
+int main(){
+    int n,m;
+    scanf("%d%d",&n,&m);
+    calculate_the_maximum(n,m);
+}
 
+```
 Output:
-//paste your output here
+
+<img width="330" height="343" alt="image" src="https://github.com/user-attachments/assets/74569a7e-4592-40af-af83-314e54faee47" />
 
 Result:
+
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
 is verified successfully.
 
@@ -59,13 +106,51 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
+```
+#include <stdio.h>
 
+int main() {
+    int noshel, noque;
+    scanf("%d%d", &noshel, &noque);
+
+    int shelarr[noshel][1000]; 
+    int book_count[noshel];  
+    for (int i = 0; i < noshel; i++) {
+        book_count[i] = 0;
+    }
+
+    for (int i = 0; i < noque; i++) {
+        int queno;
+        scanf("%d", &queno);
+
+        if (queno == 1) {
+            int shelnu, nopage;
+            scanf("%d%d", &shelnu, &nopage);
+            shelarr[shelnu][book_count[shelnu]] = nopage;
+            book_count[shelnu]++;
+        } 
+        else if (queno == 2) {
+            int pshelno, pbookno;
+            scanf("%d%d", &pshelno, &pbookno);
+            printf("%d\n", shelarr[pshelno][pbookno]);
+        } 
+        else if (queno == 3) {
+            int ppshelno;
+            scanf("%d", &ppshelno);
+            printf("%d\n", book_count[ppshelno]);
+        }
+    }
+
+    return 0;
+}
+```
 Output:
-//paste your output here
+
+<img width="325" height="251" alt="image" src="https://github.com/user-attachments/assets/f4fe004d-bb7d-499c-80a7-7230a1689460" />
 
 
 Result:
+
 Thus, the program to write the logic for the requests is verified successfully.
 
 
@@ -86,15 +171,33 @@ Algorithm:
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int n,sum=0;
+    scanf("%d",&n);
+    int a[n];
+    for(int i=1;i<=n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=1;i<=n;i++)
+    {
+        sum+=a[i];
+    }
+    printf("%d",sum);
+}
+```
 Output:
-//paste your output here
+
+<img width="490" height="190" alt="image" src="https://github.com/user-attachments/assets/e8f60c5d-b8e1-488c-91b2-5bbe7ad45f63" />
 
  
 
 
 Result:
+
 Thus, the program prints the sum of the integers in the array is verified successfully.
 
 
@@ -120,10 +223,26 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+     char str[100];
+     fgets(str,sizeof(str),stdin);
+     int len=sizeof(str);
+     int count=1;
+     for(int i=0;i<len-1;i++){
+     if(str[i]==' ')
+     count++;                         
+     }
+printf("Total number of words in the string is :%d",count);
+return 0;
+}
+```
 Output:
-//paste your output here
+
+<img width="1127" height="136" alt="image" src="https://github.com/user-attachments/assets/fa7d7793-84e7-40b5-a58c-f19348cf63c0" />
 
 
 
